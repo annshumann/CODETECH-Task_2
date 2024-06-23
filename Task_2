@@ -1,0 +1,62 @@
+# Function to calculate letter grade
+def calculate_letter_grade(score):
+    if score >= 90:
+        return 'A'
+    elif score >= 80:
+        return 'B'
+    elif score >= 70:
+        return 'C'
+    elif score >= 60:
+        return 'D'
+    else:
+        return 'F'
+
+
+# Function to calculate GPA
+def calculate_gpa(score):
+    if score >= 90:
+        return 4.0
+    elif score >= 80:
+        return 3.0
+    elif score >= 70:
+        return 2.0
+    elif score >= 60:
+        return 1.0
+    else:
+        return 0.0
+
+
+# Main program
+def main():
+    # Initialize variables
+    grades = []
+
+    # Input number of subjects or assignments
+    num_subjects = int(input("Enter the number of subjects or assignments: "))
+
+    # Input grades for each subject or assignment
+    for i in range(num_subjects):
+        grade = float(input(f"Enter grade for subject/assignment #{i + 1}: "))
+        grades.append(grade)
+
+    # Calculate average grade
+    if num_subjects > 0:
+        average_grade = sum(grades) / num_subjects
+    else:
+        average_grade = 0.0
+
+    # Calculate overall letter grade and GPA
+    overall_grade = calculate_letter_grade(average_grade)
+    gpa = calculate_gpa(average_grade)
+
+    # Display results
+    print("\nGrade Summary:")
+    print(f"Grades entered: {grades}")
+    print(f"Average grade: {average_grade:.2f}")
+    print(f"Overall grade: {overall_grade}")
+    print(f"GPA: {gpa:.2f}")
+
+
+# Run the main program
+if __name__ == "__main__":
+    main()
